@@ -1,59 +1,26 @@
 const reactContainer = document.getElementById("root");
 
-const getBooksFromFakeXHR = () => new Promise((resolve, reject) => {
-  const booksFromFakeDB = [
-    {
-      title : 'Enders Game',
-      author : 'Orson Scott Card'
-    },
-    {
-      title : 'Ready Player One',
-      author : 'Ernest Cline'
-    },
-    {
-      title : 'Talion: The Revenant',
-      author : 'Michael A. Stackpole'
-    }
-  ];
-
-  setTimeout(() => resolve(booksFromFakeDB), 250);
-});
-
-const Book = (props) => (
-  <li>
-    <h3>{ props.book.title }</h3>
-    <p>{ props.book.author }</p>
-  </li>
+const Header = (props) => (
+  <div id ="header">
+    <h1>Kanban Board</h1>
+  </div>
 );
 
-const BookSearchFilter = filter =>
-  ({ title, author }) =>
-    filter === "" ||
-      title.toLowerCase().indexOf(filter.toLowerCase()) >= 0 ||
-      author.toLowerCase().indexOf(filter.toLowerCase()) >= 0;
-
-const BookList = ({ books, filter }) => (
-  <ul>
-    { books
-      .filter(BookSearchFilter(filter))
-      .map( book => <Book book={book} /> )
-    }
-  </ul>
+const Footer = (props) => (
+  <div id ="footer">
+    <h1>Kanban Board</h1>
+  </div>
 );
 
-const BookFilterInput = ({ setFilter }) => (
-  <input type="text" placeholder="search" onChange={setFilter} />
-);
+/*class Board extends React.Component {
 
-class NewBookForm extends React.Component {
 
   constructor(props){
     super(props);
 
     // set the initial state
     this.state = {
-      title: "",
-      author: ""
+
     };
 
     this.handleTitleChange = this.handleTitleChange.bind(this);
@@ -61,43 +28,12 @@ class NewBookForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
 
   }
-
-  addBook(book){
-    console.log(book);
-    // update my parent's books state
-    this.props.addBook(book);
-    this.setState({ title : "", author : "" });
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    this.addBook(this.state);
-  }
-
-  handleTitleChange(event) {
-    this.setState({ title : event.target.value });
-  }
-
-  handleAuthorChange(event) {
-    this.setState({ author : event.target.value });
-  }
-
-  render(){
+  render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <div>
-          <input type="text" placeholder="title" onChange={this.handleTitleChange} value={this.state.title} />
-        </div>
-        <div>
-          <input type="text" placeholder="author" onChange={this.handleAuthorChange} value={this.state.author} />
-        </div>
-        <div>
-          <button type="submit">Add Book</button>
-        </div>
-      </form>
     )
   }
-}
+}*/
 
 class App extends React.Component{
 
@@ -109,39 +45,18 @@ class App extends React.Component{
       filter : ""
     };
 
-    this.setFilter = this.setFilter.bind(this);
-    this.addBook = this.addBook.bind(this);
-
   }
 
   componentWillMount() {
-    this.getBooks().then( books => {
-      this.setState({ books });
-    });
-  }
 
-  getBooks(){
-    return getBooksFromFakeXHR();
-  }
-
-  setFilter(e){
-    // console.log(e.target.value);
-    this.setState({ filter : e.target.value });
-  }
-
-  addBook(book){
-    this.setState({
-      books : this.state.books.concat(book)
-    });
   }
 
   render(){
     return (
       <div>
-        <h1>Hello React</h1>
-        <BookFilterInput setFilter={this.setFilter} />
-        <BookList books={this.state.books} filter={this.state.filter}></BookList>
-        <NewBookForm addBook={this.addBook}/>
+        <Header />
+
+        <Footer />
       </div>
     );
   }

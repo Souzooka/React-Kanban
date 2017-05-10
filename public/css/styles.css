@@ -44,3 +44,9 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+#header {
+  font-size: 36px; }
+
+#footer {
+  font-size: 36px; }
