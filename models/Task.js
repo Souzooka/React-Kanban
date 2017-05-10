@@ -3,12 +3,23 @@ module.exports = function(sequelize, DataTypes) {
     title: DataTypes.STRING,
     priority: DataTypes.INTEGER,
     status: DataTypes.INTEGER,
-    created_by: DataTypes.STRING,
-    assigned_to: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
-        Task.belongsTo(models.User);
+        Task.belongsTo(models.User, {
+          as: 'Creator',
+          foreignKey: {
+            name: 'created_by',
+            allowNull: false
+          }
+        });
+        Task.belongsTo(models.User, {
+          as: 'Assignee',
+          foreignKey: {
+            name: 'assigned_to',
+            allowNull: false
+          }
+        });
       }
     }
   });

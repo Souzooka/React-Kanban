@@ -1,5 +1,5 @@
 // Init Passport
-const { app } = require('./expressApp.js');
+const app = require('./expressApp.js');
 const salts = 10;
 const bcrypt = require('bcrypt');
 const passport = require('passport');

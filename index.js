@@ -1,5 +1,6 @@
 /*jshint esversion: 6*/
-const { app, express } = require('./expressApp.js');
+const express = require('express');
+const app = require('./expressApp.js');
 const redis = require('./redisApp.js')();
 const passport = require('./passportApp.js')();
 const server = require('./server.js');
@@ -11,11 +12,13 @@ const methodOverride = require('method-override');
 app.use(bodyParser.urlencoded({extended: false}));
 
 //To use static files
-app.use('/static', express.static('public'));
+app.use('/', express.static('public'));
 
 //To use methodOverride
 app.use(methodOverride('_method'));
 
 // Routes
-const indexRoutes = require('./routes/indexRoutes');
-app.use('/', indexRoutes);
+const apiRoutes = require('./api');
+//const indexRoutes = require('./routes/indexRoutes');
+app.use('/api', apiRoutes);
+//app.use('/', indexRoutes);

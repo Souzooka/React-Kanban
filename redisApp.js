@@ -1,5 +1,5 @@
 //Redis Server
-const { app } = require('./expressApp.js');
+const app = require('./expressApp.js');
 const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
 
