@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Picture = sequelize.define("Picture", {
+  var Task = sequelize.define("Task", {
     title: DataTypes.STRING,
     priority: DataTypes.INTEGER,
     status: DataTypes.INTEGER,
