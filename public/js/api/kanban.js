@@ -25,111 +25,121 @@ const makeRequest = (method, url, body) => {
 }
 
 const getTasks = () => {
-  makeRequest('GET', `/api/tasks/`)
-  .then ( (tasks) => {
-    // TODO
-    console.log(tasks);
-  })
-  .catch ( (error) => {
-    console.log(error);
+  return new Promise(function (resolve, reject) {
+    makeRequest('GET', `/api/tasks/`)
+    .then ( (tasks) => {
+      resolve(tasks);
+    })
+    .catch ( (error) => {
+      reject(error);
+    });
   });
 }
 
 const getUsers = () => {
-  makeRequest('GET', `/api/users/`)
-  .then ( (users) => {
-    // TODO
-    console.log(users);
-  })
-  .catch ( (error) => {
-    console.log(error);
+  return new Promise(function (resolve, reject) {
+    makeRequest('GET', `/api/users/`)
+    .then ( (users) => {
+      resolve(users);
+    })
+    .catch ( (error) => {
+      reject(error);
+    });
   });
 }
 
 const getTaskById = (id) => {
-  makeRequest('GET', `/api/tasks/${id}`)
-  .then ( (tasks) => {
-    // TODO
-    console.log(tasks);
-  })
-  .catch ( (error) => {
-    console.log(error);
+  return new Promise(function (resolve, reject) {
+    makeRequest('GET', `/api/tasks/${id}`)
+    .then ( (tasks) => {
+      resolve(tasks);
+    })
+    .catch ( (error) => {
+      reject(error);
+    });
   });
 }
 
 const getUserById = (id) => {
-  makeRequest('GET', `/api/users/${id}`)
-  .then ( (users) => {
-    // TODO
-    console.log(users);
-  })
-  .catch ( (error) => {
-    console.log(error);
+  return new Promise(function (resolve, reject) {
+    makeRequest('GET', `/api/users/${id}`)
+    .then ( (users) => {
+      resolve(users);
+    })
+    .catch ( (error) => {
+      reject(error);
+    });
   });
 }
 
 const postTask = (body) => {
-  makeRequest('POST', `/api/tasks/`, body)
-  .then ( (tasks) => {
-    // TODO
-    console.log(tasks);
-  })
-  .catch ( (error) => {
-    console.log(error);
+  return new Promise(function (resolve, reject) {
+    makeRequest('POST', `/api/tasks/`, body)
+    .then ( (tasks) => {
+      resolve(tasks);
+    })
+    .catch ( (error) => {
+      reject(error);
+    });
   });
 }
 
 const postUser = (body) => {
-  makeRequest('POST', `/api/users/`, body)
-  .then ( (users) => {
-    // TODO
-    console.log(users);
-  })
-  .catch ( (error) => {
-    console.log(error);
+  return new Promise(function (resolve, reject) {
+    makeRequest('POST', `/api/users/`, body)
+    .then ( (users) => {
+      resolve(users);
+    })
+    .catch ( (error) => {
+      reject(error);
+    });
   });
 }
 
 const putTask = (id, body) => {
-  makeRequest('PUT', `/api/tasks/${id}`, body)
-  .then ( (tasks) => {
-    // TODO
-    console.log(tasks);
-  })
-  .catch ( (error) => {
-    console.log(error);
+  return new Promise(function (resolve, reject) {
+    makeRequest('PUT', `/api/tasks/${id}`, body)
+    .then ( (tasks) => {
+      resolve(tasks);
+    })
+    .catch ( (error) => {
+      reject(error);
+    });
   });
 }
 
 const putUser = (id, body) => {
-  makeRequest('PUT', `/api/users/${id}`, body)
-  .then ( (users) => {
-    // TODO
-    console.log(users);
-  })
-  .catch ( (error) => {
-    console.log(error);
+  return new Promise(function (resolve, reject) {
+    makeRequest('PUT', `/api/users/${id}`, body)
+    .then ( (users) => {
+      resolve(users);
+    })
+    .catch ( (error) => {
+      reject(error);
+    });
   });
 }
 
 const deleteTask = (id, body) => {
-  makeRequest('DELETE', `/api/tasks/${id}`, body)
-  .then ( (tasks) => {
-    // TODO
-    console.log(tasks);
-  })
-  .catch ( (error) => {
-    console.log(error);
+  return new Promise(function (resolve, reject) {
+    makeRequest('DELETE', `/api/tasks/${id}`, body)
+    .then ( (tasks) => {
+      resolve(tasks);
+    })
+    .catch ( (error) => {
+      reject(error);
+    });
   });
 }
 
 const deleteUser = (id, body) => {
-  makeRequest('DELETE', `/api/users/${id}`, body)
-  .then ( (users) => {
-    // TODO
-    console.log(users);
-  })
-  .catch ( (error) => {
-    console.log(error);
+  return new Promise(function (resolve, reject) {
+    makeRequest('DELETE', `/api/users/${id}`, body)
+    .then ( (users) => {
+      resolve(users);
+    })
+    .catch ( (error) => {
+      reject(error);
+    });
   });
 }
