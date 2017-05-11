@@ -29,6 +29,11 @@ Tasks.get('/:id', (req, res) => {
     include: [
       {
         model: User,
+        as: 'Creator'
+      },
+      {
+        model: User,
+        as: 'Assignee'
       }
     ]
   })
@@ -55,7 +60,11 @@ Tasks.post('/', (req, res) => {
 
 Tasks.put('/:id', (req, res) => {
   Task.update({
-    name: req.body.name
+    title: req.body.title,
+    status: parseInt(req.body.status),
+    priority: parseInt(req.body.priority),
+    created_by: req.body.created_by,
+    assigned_to: req.body.assigned_to
   }, {
     where: {
       id: req.params.id,
@@ -65,7 +74,17 @@ Tasks.put('/:id', (req, res) => {
     return Task.find( {
       where: {
         id: req.params.id
-      }
+      },
+      include: [
+        {
+          model: User,
+          as: 'Creator'
+        },
+        {
+          model: User,
+          as: 'Assignee'
+        }
+      ]
     });
   })
   .then( (task) => {
@@ -73,6 +92,20 @@ Tasks.put('/:id', (req, res) => {
   })
   .catch( (err) => {
     res.json(err);
+  });
+});
+
+Tasks.delete('/:id', (req, res) => {
+  Task.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then( () => {
+    res.json({success: true});
+  })
+  .catch( () => {
+    res.json({sucess: false});
   });
 });
 

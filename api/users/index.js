@@ -21,13 +21,28 @@ Users.get('/:id', (req, res) => {
 
 Users.post('/', (req, res) => {
   User.create({
-    name: req.body.name
+    username: req.body.username,
+    password: req.body.password
   })
   .then( (user) => {
     res.json(user);
   })
   .catch( (err) => {
     res.json(err);
+  });
+});
+
+Users.delete('/:id', (req, res) => {
+  User.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then( () => {
+    res.json({success: true});
+  })
+  .catch( () => {
+    res.json({sucess: false});
   });
 });
 

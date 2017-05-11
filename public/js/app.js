@@ -1,5 +1,6 @@
 const reactContainer = document.getElementById("root");
 console.log(getTasks());
+postUser("username=bar&password=ipsum");
 
 const Header = (props) => (
   <div id="header">
