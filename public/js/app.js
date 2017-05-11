@@ -1,4 +1,5 @@
 const reactContainer = document.getElementById("root");
+console.log(getTasks());
 
 const Header = (props) => (
   <div id="header">
