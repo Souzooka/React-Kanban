@@ -1,8 +1,9 @@
+/*jshint esversion:6*/
 const makeRequest = (method, url, body) => {
   return new Promise(function (resolve, reject) {
     var xhr = new XMLHttpRequest();
     xhr.open(method, url);
-    if (body) xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    if (body) xhr.setRequestHeader("content-type", "application/json");
     xhr.onload = function () {
       if (this.status >= 200 && this.status < 300) {
         resolve(xhr.response);
@@ -21,7 +22,7 @@ const makeRequest = (method, url, body) => {
     };
     (body) ? xhr.send(body) : xhr.send();
   });
-}
+};
 
 const getTasks = () => {
   return new Promise(function (resolve, reject) {
@@ -33,7 +34,7 @@ const getTasks = () => {
       reject(error);
     });
   });
-}
+};
 
 const getUsers = () => {
   return new Promise(function (resolve, reject) {
@@ -45,7 +46,7 @@ const getUsers = () => {
       reject(error);
     });
   });
-}
+};
 
 const getTaskById = (id) => {
   return new Promise(function (resolve, reject) {
@@ -57,7 +58,7 @@ const getTaskById = (id) => {
       reject(error);
     });
   });
-}
+};
 
 const getUserById = (id) => {
   return new Promise(function (resolve, reject) {
@@ -69,7 +70,7 @@ const getUserById = (id) => {
       reject(error);
     });
   });
-}
+};
 
 const postTask = (body) => {
   return new Promise(function (resolve, reject) {
@@ -81,7 +82,7 @@ const postTask = (body) => {
       reject(error);
     });
   });
-}
+};
 
 const postUser = (body) => {
   return new Promise(function (resolve, reject) {
@@ -93,7 +94,7 @@ const postUser = (body) => {
       reject(error);
     });
   });
-}
+};
 
 const putTask = (id, body) => {
   return new Promise(function (resolve, reject) {
@@ -105,7 +106,7 @@ const putTask = (id, body) => {
       reject(error);
     });
   });
-}
+};
 
 const putUser = (id, body) => {
   return new Promise(function (resolve, reject) {
@@ -117,7 +118,7 @@ const putUser = (id, body) => {
       reject(error);
     });
   });
-}
+};
 
 const deleteTask = (id, body) => {
   return new Promise(function (resolve, reject) {
@@ -129,7 +130,7 @@ const deleteTask = (id, body) => {
       reject(error);
     });
   });
-}
+};
 
 const deleteUser = (id, body) => {
   return new Promise(function (resolve, reject) {
@@ -141,4 +142,4 @@ const deleteUser = (id, body) => {
       reject(error);
     });
   });
-}
+};

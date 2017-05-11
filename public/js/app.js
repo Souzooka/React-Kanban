@@ -1,8 +1,13 @@
 const reactContainer = document.getElementById("root");
 
 // For Testing and Initialization purposes
-//postUser('username=Souzooka&password=ok');
-//postTask('title=CSS&status=0&priority=0&created_by=1&assigned_to=1');
+postUser(JSON.stringify({
+  username: 'Souzooka',
+  password: 'ok'
+}))
+.then( (user) => {
+  console.log(user);
+});
 getUsers()
 .then( (users) => {
   console.log(users);

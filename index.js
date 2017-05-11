@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
 //To use bodyParser
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 //To use static files
 app.use( express.static('public'));
