@@ -20,7 +20,6 @@ const makeRequest = (method, url, body) => {
         statusText: xhr.statusText
       });
     };
-    console.log(body);
     (body) ? xhr.send(body) : xhr.send();
   });
 }
@@ -103,7 +102,7 @@ const putTask = (id, body) => {
 }
 
 const putUser = (id, body) => {
-  makeRequest('PUT', `/api/tasks/${id}`, body)
+  makeRequest('PUT', `/api/users/${id}`, body)
   .then ( (users) => {
     // TODO
     console.log(users);
@@ -125,7 +124,7 @@ const deleteTask = (id, body) => {
 }
 
 const deleteUser = (id, body) => {
-  makeRequest('DELETE', `/api/tasks/${id}`, body)
+  makeRequest('DELETE', `/api/users/${id}`, body)
   .then ( (users) => {
     // TODO
     console.log(users);

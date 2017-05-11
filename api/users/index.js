@@ -33,6 +33,7 @@ Users.post('/', (req, res) => {
 });
 
 Users.delete('/:id', (req, res) => {
+  console.log(req.params.id);
   User.destroy({
     where: {
       id: req.params.id
@@ -41,7 +42,7 @@ Users.delete('/:id', (req, res) => {
   .then( () => {
     res.json({success: true});
   })
-  .catch( () => {
+  .catch( (err) => {
     res.json({sucess: false});
   });
 });
