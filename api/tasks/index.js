@@ -8,6 +8,11 @@ Tasks.get('/', (req, res) => {
     include: [
       {
         model: User,
+        as: 'Creator'
+      },
+      {
+        model: User,
+        as: 'Assignee'
       }
     ]
   })
@@ -34,8 +39,11 @@ Tasks.get('/:id', (req, res) => {
 
 Tasks.post('/', (req, res) => {
   Task.create({
+    title: req.body.title,
+    status: parseInt(req.body.status),
+    priority: parseInt(req.body.priority),
     created_by: req.body.created_by,
-    name: req.body.name,
+    assigned_to: req.body.assigned_to
   })
   .then( (task) => {
     res.json(task);

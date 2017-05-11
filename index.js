@@ -8,12 +8,6 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
-//Bypass CORS
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
-
 //To use bodyParser
 app.use(bodyParser.urlencoded({extended: false}));
 
