@@ -1,4 +1,3 @@
-
 const makeRequest = (method, url, body) => {
   return new Promise(function (resolve, reject) {
     var xhr = new XMLHttpRequest();
