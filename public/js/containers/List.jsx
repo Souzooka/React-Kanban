@@ -18,7 +18,6 @@ window.List = class List extends React.Component {
 
   render() {
     const cards = 'todo';
-    console.log(this.props.cards)
     return (
       <div className="cards-container">
         {cards}

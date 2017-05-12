@@ -68,7 +68,7 @@ const reactContainer = document.getElementById("root");
 
 ReactDOM.render(
   // component to render
-  <App />,
+  <Board />,
 
   // where to inject this component
   // dom element, or use getElementById
