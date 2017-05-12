@@ -1,3 +1,5 @@
+const LIST_STATUS = ['IN QUEUE', 'IN PROGRESS', 'DONE'];
+
 window.List = class List extends React.Component {
 
   constructor(props){
@@ -10,7 +12,7 @@ window.List = class List extends React.Component {
   }
 
   getStatusText() {
-    return ['IN QUEUE', 'IN PROGRESS', 'DONE'][this.state.status];
+    return LIST_STATUS[this.state.status];
   }
 
   render() {

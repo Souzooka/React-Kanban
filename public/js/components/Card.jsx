@@ -1,3 +1,5 @@
+const CARD_STATUS = ['Low', 'Medium', 'High', 'Blocking'];
+
 window.Card = class Card extends React.Component {
 
   constructor(props){
@@ -9,7 +11,7 @@ window.Card = class Card extends React.Component {
   }
 
   getStatusText() {
-    return ['Low', 'Medium', 'High', 'Blocking'][this.state.priority];
+    return CARD_STATUS[this.state.priority];
   }
 
   render() {

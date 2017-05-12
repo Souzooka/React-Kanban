@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Task = sequelize.define("Task", {
+  var Card = sequelize.define("Card", {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -21,14 +21,14 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        Task.belongsTo(models.User, {
+        Card.belongsTo(models.User, {
           as: 'Creator',
           foreignKey: {
             name: 'created_by',
             allowNull: false
           }
         });
-        Task.belongsTo(models.User, {
+        Card.belongsTo(models.User, {
           as: 'Assignee',
           foreignKey: {
             name: 'assigned_to',
@@ -39,5 +39,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  return Task;
+  return Card;
 };

@@ -9,59 +9,59 @@ postUser(JSON.stringify({
 .then( (user) => {
   console.log(user);
 
-  postTask(JSON.stringify({
+  postCard(JSON.stringify({
     title: 'Make some more CSS',
     status: 0,
     priority: 1,
     created_by: 1,
     assigned_to: 1
   }))
-  .then( (task) => {
-    console.log(task);
+  .then( (card) => {
+    console.log(card);
   });
 
-  postTask(JSON.stringify({
+  postCard(JSON.stringify({
     title: 'Make some more CSS',
     status: 0,
     priority: 3,
     created_by: 1,
     assigned_to: 1
   }))
-  .then( (task) => {
-    console.log(task);
+  .then( (card) => {
+    console.log(card);
   });
 
-  postTask(JSON.stringify({
+  postCard(JSON.stringify({
     title: 'Make some more CSS',
     status: 1,
     priority: 2,
     created_by: 1,
     assigned_to: 1
   }))
-  .then( (task) => {
-    console.log(task);
+  .then( (card) => {
+    console.log(card);
   });
 
-  postTask(JSON.stringify({
+  postCard(JSON.stringify({
     title: 'Make some more CSS',
     status: 2,
     priority: 1,
     created_by: 1,
     assigned_to: 1
   }))
-  .then( (task) => {
-    console.log(task);
+  .then( (card) => {
+    console.log(card);
   });
 
-  postTask(JSON.stringify({
+  postCard(JSON.stringify({
     title: 'Make some more CSS',
     status: 2,
     priority: 0,
     created_by: 1,
     assigned_to: 1
   }))
-  .then( (task) => {
-    console.log(task);
+  .then( (card) => {
+    console.log(card);
   });
 });
 // end

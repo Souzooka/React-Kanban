@@ -24,11 +24,11 @@ const makeRequest = (method, url, body) => {
   });
 };
 
-const getTasks = () => {
+const getCards = () => {
   return new Promise(function (resolve, reject) {
-    makeRequest('GET', `/api/tasks/`)
-    .then ( (tasks) => {
-      resolve(tasks);
+    makeRequest('GET', `/api/cards/`)
+    .then ( (cards) => {
+      resolve(cards);
     })
     .catch ( (error) => {
       reject(error);
@@ -48,11 +48,11 @@ const getUsers = () => {
   });
 };
 
-const getTaskById = (id) => {
+const getCardById = (id) => {
   return new Promise(function (resolve, reject) {
-    makeRequest('GET', `/api/tasks/${id}`)
-    .then ( (tasks) => {
-      resolve(tasks);
+    makeRequest('GET', `/api/cards/${id}`)
+    .then ( (cards) => {
+      resolve(cards);
     })
     .catch ( (error) => {
       reject(error);
@@ -72,11 +72,11 @@ const getUserById = (id) => {
   });
 };
 
-const postTask = (body) => {
+const postCard = (body) => {
   return new Promise(function (resolve, reject) {
-    makeRequest('POST', `/api/tasks/`, body)
-    .then ( (tasks) => {
-      resolve(tasks);
+    makeRequest('POST', `/api/cards/`, body)
+    .then ( (cards) => {
+      resolve(cards);
     })
     .catch ( (error) => {
       reject(error);
@@ -96,11 +96,11 @@ const postUser = (body) => {
   });
 };
 
-const putTask = (id, body) => {
+const putCard = (id, body) => {
   return new Promise(function (resolve, reject) {
-    makeRequest('PUT', `/api/tasks/${id}`, body)
-    .then ( (tasks) => {
-      resolve(tasks);
+    makeRequest('PUT', `/api/cards/${id}`, body)
+    .then ( (cards) => {
+      resolve(cards);
     })
     .catch ( (error) => {
       reject(error);
@@ -120,11 +120,11 @@ const putUser = (id, body) => {
   });
 };
 
-const deleteTask = (id, body) => {
+const deleteCard = (id, body) => {
   return new Promise(function (resolve, reject) {
-    makeRequest('DELETE', `/api/tasks/${id}`, body)
-    .then ( (tasks) => {
-      resolve(tasks);
+    makeRequest('DELETE', `/api/cards/${id}`, body)
+    .then ( (cards) => {
+      resolve(cards);
     })
     .catch ( (error) => {
       reject(error);

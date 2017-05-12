@@ -1,10 +1,10 @@
 /*jshint esversion:6*/
 const express = require('express');
-const Tasks = express.Router();
-const { Task, User } = require('../../models');
+const Cards = express.Router();
+const { Card, User } = require('../../models');
 
-Tasks.get('/', (req, res) => {
-  Task.all({
+Cards.get('/', (req, res) => {
+  Card.all({
     include: [
       {
         model: User,
@@ -16,13 +16,13 @@ Tasks.get('/', (req, res) => {
       }
     ]
   })
-  .then( (tasks) => {
-    res.json(tasks);
+  .then( (Cards) => {
+    res.json(Cards);
   });
 });
 
-Tasks.get('/:id', (req, res) => {
-  Task.find({
+Cards.get('/:id', (req, res) => {
+  Card.find({
     where: {
       id: req.params.id,
     },
@@ -37,29 +37,29 @@ Tasks.get('/:id', (req, res) => {
       }
     ]
   })
-  .then( (task) => {
-    res.json(task);
+  .then( (Card) => {
+    res.json(Card);
   });
 });
 
-Tasks.post('/', (req, res) => {
-  Task.create({
+Cards.post('/', (req, res) => {
+  Card.create({
     title: req.body.title,
     status: parseInt(req.body.status),
     priority: parseInt(req.body.priority),
     created_by: req.body.created_by,
     assigned_to: req.body.assigned_to
   })
-  .then( (task) => {
-    res.json(task);
+  .then( (Card) => {
+    res.json(Card);
   })
   .catch( (err) => {
     res.json(err);
   });
 });
 
-Tasks.put('/:id', (req, res) => {
-  Task.update({
+Cards.put('/:id', (req, res) => {
+  Card.update({
     title: req.body.title,
     status: parseInt(req.body.status),
     priority: parseInt(req.body.priority),
@@ -70,8 +70,8 @@ Tasks.put('/:id', (req, res) => {
       id: req.params.id,
     }
   })
-  .then( (task) => {
-    return Task.find( {
+  .then( (Card) => {
+    return Card.find( {
       where: {
         id: req.params.id
       },
@@ -87,16 +87,16 @@ Tasks.put('/:id', (req, res) => {
       ]
     });
   })
-  .then( (task) => {
-    res.json(task);
+  .then( (Card) => {
+    res.json(Card);
   })
   .catch( (err) => {
     res.json(err);
   });
 });
 
-Tasks.delete('/:id', (req, res) => {
-  Task.destroy({
+Cards.delete('/:id', (req, res) => {
+  Card.destroy({
     where: {
       id: req.params.id
     }
@@ -109,4 +109,4 @@ Tasks.delete('/:id', (req, res) => {
   });
 });
 
-module.exports = Tasks;
+module.exports = Cards;

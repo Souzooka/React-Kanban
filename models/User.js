@@ -12,10 +12,10 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        User.hasMany(models.Task, {
+        User.hasMany(models.Card, {
           as: 'Creator',
         });
-        User.hasMany(models.Task, {
+        User.hasMany(models.Card, {
           as: 'Assignee',
         });
       }
