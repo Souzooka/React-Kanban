@@ -1,27 +1,16 @@
 const LIST_STATUS = ['IN QUEUE', 'IN PROGRESS', 'DONE'];
 
-window.List = class List extends React.Component {
+window.List = (props) => (
 
-  constructor(props){
-    super(props);
-    console.log(props.cards)
-
-    this.state = {
-      status: props.status,
-      cards: props.cards.filter( (card) => card.status === this.status )
-    };
-  }
-
-  getStatusText() {
-    return LIST_STATUS[this.state.status];
-  }
-
-  render() {
-    const cards = 'todo';
-    return (
-      <div className="cards-container">
-        {cards}
-      </div>
-    )
-  }
-}
+  <div className="cards-container">
+  <h1>
+  {LIST_STATUS[props.status]}
+  </h1>
+    <ul>
+      {props.cards.map( (card, index) => {
+        return <Card card={props.cards[index]}/>
+      })}
+      <hr/>
+    </ul>
+  </div>
+)

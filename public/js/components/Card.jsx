@@ -1,24 +1,11 @@
 const CARD_STATUS = ['Low', 'Medium', 'High', 'Blocking'];
 
-window.Card = class Card extends React.Component {
-
-  constructor(props){
-    super(props);
-
-    this.state = {
-      priority: props.priority
-    };
-  }
-
-  getStatusText() {
-    return CARD_STATUS[this.state.priority];
-  }
-
-  render() {
-    return (
-      <div className="card">
-        <p></p>
-      </div>
-    )
-  }
-}
+window.Card = (props) => (
+  <div className="card">
+    <hr/>
+    <p>Task: {props.card.title}</p>
+    <p>Priority: {CARD_STATUS[props.card.priority]}</p>
+    <p>Created by: {props.card.Creator.username}</p>
+    <p>Assigned to: {props.card.Assignee.username}</p>
+  </div>
+);
