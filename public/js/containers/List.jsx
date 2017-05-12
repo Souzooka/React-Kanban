@@ -4,10 +4,11 @@ window.List = class List extends React.Component {
 
   constructor(props){
     super(props);
+    console.log(props.cards)
 
     this.state = {
       status: props.status,
-      cards: []
+      cards: props.cards.filter( (card) => card.status === this.status )
     };
   }
 
@@ -17,6 +18,7 @@ window.List = class List extends React.Component {
 
   render() {
     const cards = 'todo';
+    console.log(this.props.cards)
     return (
       <div className="cards-container">
         {cards}

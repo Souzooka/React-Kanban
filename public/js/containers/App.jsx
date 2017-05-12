@@ -4,21 +4,27 @@ window.App = class App extends React.Component{
     super(props);
 
     this.state = {
-      books : [],
-      filter : ""
+      cards: [],
     };
 
+    this.addCard = this.addCard.bind(this);
   }
 
   componentWillMount() {
+    getCards().then( cards => {
+      this.setState({ cards });
+    });
+  }
 
+  addCard(card) {
+    this.setState( {cards: this.cards.push(card)} );
   }
 
   render(){
     return (
       <div>
         <Header />
-        <Board />
+        <Board cards={this.state.cards}/>
         <Footer />
       </div>
     );

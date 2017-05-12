@@ -28,7 +28,7 @@ const getCards = () => {
   return new Promise(function (resolve, reject) {
     makeRequest('GET', `/api/cards/`)
     .then ( (cards) => {
-      resolve(cards);
+      resolve(JSON.parse(cards));
     })
     .catch ( (error) => {
       reject(error);

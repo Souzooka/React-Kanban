@@ -2,7 +2,7 @@
 const reactContainer = document.getElementById("root");
 
 // For Testing and Initialization purposes
-postUser(JSON.stringify({
+/*postUser(JSON.stringify({
   username: 'Souzooka',
   password: 'ok'
 }))
@@ -63,7 +63,7 @@ postUser(JSON.stringify({
   .then( (card) => {
     console.log(card);
   });
-});
+});*/
 // end
 
 ReactDOM.render(
