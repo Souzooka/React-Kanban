@@ -1,8 +1,16 @@
 /*jshint: esverion:6*/
 const reactContainer = document.getElementById("root");
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import kanbanReducers from './reducers';
+import Board from './containers/Board';
+import './index.css';
 
 // For Testing and Initialization purposes
-/*postUser(JSON.stringify({
+import {postUser, postCard} from './api/';
+postUser(JSON.stringify({
   username: 'Souzooka',
   password: 'ok'
 }))
@@ -63,12 +71,18 @@ const reactContainer = document.getElementById("root");
   .then( (card) => {
     console.log(card);
   });
-});*/
+});
 // end
+
+const store = createStore(
+  kanbanReducers
+);
 
 ReactDOM.render(
   // component to render
-  <Board />,
+  <Provider store={store}>
+    <Board />
+  </Provider>,
 
   // where to inject this component
   // dom element, or use getElementById

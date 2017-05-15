@@ -1,6 +1,8 @@
+import React from 'react';
+import Card from '../components/Card';
 const LIST_STATUS = ['IN QUEUE', 'IN PROGRESS', 'DONE'];
 
-window.List = (props) => (
+const List = (props) => (
 
   <div className="cards-container">
   <h1>
@@ -14,3 +16,5 @@ window.List = (props) => (
     </ul>
   </div>
 )
+
+export default List;

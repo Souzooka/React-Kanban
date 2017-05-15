@@ -1,8 +1,8 @@
 /*jshint esversion: 6*/
 const express = require('express');
-const app = require('./expressApp.js');
-const redis = require('./redisApp.js')();
-const passport = require('./passportApp.js')();
+const app = require('./server/expressApp.js');
+const redis = require('./server/redisApp.js')();
+const passport = require('./server/passportApp.js')();
 let server;
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -23,4 +23,4 @@ const apiRoutes = require('./api/index');
 app.use('/api', apiRoutes);
 //app.use('/', indexRoutes);
 
-server = require('./server.js');
+server = require('./server/server.js');

@@ -1,6 +1,7 @@
+import React from 'react';
 const CARD_STATUS = ['Low', 'Medium', 'High', 'Blocking'];
 
-window.Card = (props) => (
+const Card = (props) => (
   <div className="card">
     <hr/>
     <p>Task: {props.card.title}</p>
@@ -9,3 +10,5 @@ window.Card = (props) => (
     <p>Assigned to: {props.card.Assignee.username}</p>
   </div>
 );
+
+export default Card;

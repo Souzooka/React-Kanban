@@ -1,5 +1,7 @@
 /*jshint esversion:6*/
-const makeRequest = (method, url, body) => {
+export const LOAD_CARDS = "LOAD_CARDS";
+
+export const makeRequest = (method, url, body) => {
   return new Promise(function (resolve, reject) {
     var xhr = new XMLHttpRequest();
     xhr.open(method, url);
@@ -24,7 +26,7 @@ const makeRequest = (method, url, body) => {
   });
 };
 
-const getCards = () => {
+export const getCards = () => {
   return new Promise(function (resolve, reject) {
     makeRequest('GET', `/api/cards/`)
     .then ( (cards) => {
@@ -36,7 +38,7 @@ const getCards = () => {
   });
 };
 
-const getUsers = () => {
+export const getUsers = () => {
   return new Promise(function (resolve, reject) {
     makeRequest('GET', `/api/users/`)
     .then ( (users) => {
@@ -48,7 +50,7 @@ const getUsers = () => {
   });
 };
 
-const getCardById = (id) => {
+export const getCardById = (id) => {
   return new Promise(function (resolve, reject) {
     makeRequest('GET', `/api/cards/${id}`)
     .then ( (cards) => {
@@ -60,7 +62,7 @@ const getCardById = (id) => {
   });
 };
 
-const getUserById = (id) => {
+export const getUserById = (id) => {
   return new Promise(function (resolve, reject) {
     makeRequest('GET', `/api/users/${id}`)
     .then ( (users) => {
@@ -72,7 +74,7 @@ const getUserById = (id) => {
   });
 };
 
-const postCard = (body) => {
+export const postCard = (body) => {
   return new Promise(function (resolve, reject) {
     makeRequest('POST', `/api/cards/`, body)
     .then ( (cards) => {
@@ -84,7 +86,7 @@ const postCard = (body) => {
   });
 };
 
-const postUser = (body) => {
+export const postUser = (body) => {
   return new Promise(function (resolve, reject) {
     makeRequest('POST', `/api/users/`, body)
     .then ( (users) => {
@@ -96,7 +98,7 @@ const postUser = (body) => {
   });
 };
 
-const putCard = (id, body) => {
+export const putCard = (id, body) => {
   return new Promise(function (resolve, reject) {
     makeRequest('PUT', `/api/cards/${id}`, body)
     .then ( (cards) => {
@@ -108,7 +110,7 @@ const putCard = (id, body) => {
   });
 };
 
-const putUser = (id, body) => {
+export const putUser = (id, body) => {
   return new Promise(function (resolve, reject) {
     makeRequest('PUT', `/api/users/${id}`, body)
     .then ( (users) => {
@@ -120,7 +122,7 @@ const putUser = (id, body) => {
   });
 };
 
-const deleteCard = (id, body) => {
+export const deleteCard = (id, body) => {
   return new Promise(function (resolve, reject) {
     makeRequest('DELETE', `/api/cards/${id}`, body)
     .then ( (cards) => {
@@ -132,7 +134,7 @@ const deleteCard = (id, body) => {
   });
 };
 
-const deleteUser = (id, body) => {
+export const deleteUser = (id, body) => {
   return new Promise(function (resolve, reject) {
     makeRequest('DELETE', `/api/users/${id}`, body)
     .then ( (users) => {
