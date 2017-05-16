@@ -30,6 +30,7 @@ export const getCards = () => {
   return new Promise(function (resolve, reject) {
     makeRequest('GET', `/api/cards/`)
     .then ( (cards) => {
+      console.log(JSON.parse(cards))
       resolve(JSON.parse(cards));
     })
     .catch ( (error) => {
