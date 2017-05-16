@@ -7,6 +7,20 @@ import { getCards } from '../api';
 import { loadCards } from '../actions';
 //import './styles.css';
 
+const mapStateToProps = (state) => {
+  return {
+    cards: state.cards
+  };
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    loadCards: cards => {
+      dispatch(loadCards(cards))
+    },
+  }
+}
+
 class Board extends Component {
 
   constructor(props){
@@ -20,6 +34,7 @@ class Board extends Component {
   }
 
   render() {
+
     return (
       <div>
         <Header />
@@ -40,19 +55,7 @@ class Board extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    cards: state.cards
-  };
-}
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-    loadCards: cards => {
-      dispatch(loadCards(cards))
-    },
-  }
-}
 
 const ConnectedBoard = connect(
   mapStateToProps,

@@ -11,7 +11,7 @@ const cards = (state = initialState, action) => {
 
   switch(action.type){
     case LOAD_CARDS:
-      return Object.assign({}, state, { cards });
+      return Object.assign({}, state, { cards: action.cards });
     default:
       return state;
   }

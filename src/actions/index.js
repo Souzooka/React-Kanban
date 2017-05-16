@@ -1,8 +1,8 @@
-export const LOAD_BOOKS = 'LOAD_BOOKS';
+export const LOAD_CARDS = 'LOAD_CARDS';
 
-export const loadBooks = books => {
+export const loadCards = cards => {
   return {
-    type: LOAD_BOOKS,
-    books
+    type: LOAD_CARDS,
+    cards
   };
 };

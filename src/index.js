@@ -9,7 +9,7 @@ import Board from './containers/Board';
 import './index.css';
 
 // For Testing and Initialization purposes
-import {postUser, postCard} from './api/';
+/*import {postUser, postCard} from './api/';
 postUser(JSON.stringify({
   username: 'Souzooka',
   password: 'ok'
@@ -71,7 +71,7 @@ postUser(JSON.stringify({
   .then( (card) => {
     console.log(card);
   });
-});
+});*/
 // end
 
 const store = createStore(
