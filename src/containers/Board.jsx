@@ -22,7 +22,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 }
 
 class Board extends Component {
-
   constructor(props){
     super(props);
   }
@@ -34,7 +33,6 @@ class Board extends Component {
   }
 
   render() {
-
     return (
       <div>
         <Header />

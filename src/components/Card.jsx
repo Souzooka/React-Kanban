@@ -8,6 +8,10 @@ const Card = (props) => (
     <p>Priority: {CARD_STATUS[props.card.priority]}</p>
     <p>Created by: {props.card.Creator.username}</p>
     <p>Assigned to: {props.card.Assignee.username}</p>
+    <button>Move Up</button>
+    <button>Move Down</button>
+    <button>Delete</button>
+    <button>Change priority</button>
   </div>
 );
 
