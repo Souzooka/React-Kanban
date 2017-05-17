@@ -2,7 +2,7 @@
 export const LOAD_CARDS = 'LOAD_CARDS';
 export const ADD_CARD = 'ADD_CARD';
 export const DELETE_CARD = 'DELETE_CARD';
-export const MOVE_CARDS = 'MOVE_CARDS';
+export const MOVE_CARD = 'MOVE_CARD';
 
 export const loadCards = cards => {
   return {
