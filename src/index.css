@@ -61,4 +61,13 @@ body {
   justify-content: center;
   height: 90%;
   padding: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+#board-queue {
+  border-right: 1px solid #ccc;
+}
+
+#board-done {
+  border-left: 1px solid #ccc;
 }
