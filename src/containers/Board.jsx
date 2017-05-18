@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import List from '../components/List';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { getCards } from '../api';
-import { loadCards } from '../actions';
+import { getCards, postCard, putCard, deleteCard } from '../api';
+import { loadCards, addCard, destroyCard, editCard } from '../actions';
 //import './styles.css';
 
 const mapStateToProps = (state) => {
@@ -18,6 +18,15 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     loadCards: cards => {
       dispatch(loadCards(cards))
     },
+    addCard: card => {
+      dispatch(addCard(card))
+    },
+    deleteCard: card => {
+      dispatch(deleteCard(card))
+    },
+    putCard: card => {
+      dispatch(putCard(card))
+    }
   }
 }
 
@@ -30,6 +39,21 @@ class Board extends Component {
     getCards().then( cards => {
       this.props.loadCards( cards );
     });
+  }
+
+  addCard = (card) => {
+    postCard(card);
+    this.props.addCard(card);
+  }
+
+  deleteCard = (card) => {
+    deleteCard(card);
+    this.props.addCard(card);
+  }
+
+  putCard = (card) => {
+    putCard(card);
+    this.props.addCard(card);
   }
 
   render() {
